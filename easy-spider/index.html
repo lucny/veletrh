@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>Easy Spider</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css" />
+    <script src="codemirror/lib/codemirror.js"></script>
+    <style>
+        header {
+            background-image: url('img/web.png');
+        }
+        #canvas {
+            background-color: blanchedalmond;
+            border: 2px solid black;
+        }
+        .CodeMirror {
+            border: 1px solid black;
+        }
+        .CodeMirror-line {
+            border-bottom: 1px dotted gray !important;
+        }
+        .CodeMirror-selected {
+            background-color: brown;
+        }
+
+    </style>
+  </head>
+  <body>
+    <header class="text-left jumbotron jumbotron-fluid bg-info pl-5">
+      <h1 class="text-dark display-1 text-uppercase">Easy Spider</h1>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <canvas id="canvas" width="600" height="600"></canvas>
+        </div>
+        <div class="col-sm-6">
+           <p><textarea id="editor" cols="60" rows="20"></textarea></p> 
+           <p><button class="btn btn-success" id="run">Run code</button> Steps: <span id="steps">0</span> | Commands: <span id="commands">0</span> | Chars: <span id="chars">0</span> | Victims: <span id="victims">0</span></p>
+           <p id="info" class="alert alert-danger">Show must go on...</p>   
+           <div class="alert alert-warning">
+               <h4>Cíl hry</h4>
+               <p>Pavouk musí vychytat všechny mouchy a dojít do cíle</p>
+               <h4>Povolené příkazy:</h4>
+               <ul>
+                   <li><kbd>go</kbd> posun se o jednu pozici</li>
+                   <li><kbd>rotate</kbd> otočení o 90 stupňů ve směru hodinových ručiček</li>
+                   <li><kbd>repeat 3 go</kbd> opakování - 3krát - příkazu <kbd>go</kbd></li>
+                   <li><kbd>repeat 2 rotate</kbd> opakování - 2krát - příkazu <kbd>rotate</kbd></li>
+               </ul>
+           </div>        
+        </div>
+      </div>
+    </main>
+    <footer class="container-fluid text-center bg-light">
+      <p>SŠPU Opava 2019</p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/spider.js"></script>
+  </body>
+</html>
